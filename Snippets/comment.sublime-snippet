@@ -1,0 +1,5 @@
+<snippet>
+  <content><![CDATA[<%doc>$0</%doc>]]></content>
+  <tabTrigger>//</tabTrigger>
+  <scope>text.html.jamon</scope>
+</snippet>

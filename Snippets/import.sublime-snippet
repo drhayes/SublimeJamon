@@ -1,0 +1,7 @@
+<snippet>
+  <content><![CDATA[<%import>
+  $0
+</%import>]]></content>
+  <tabTrigger>import</tabTrigger>
+  <scope>text.html.jamon</scope>
+</snippet>

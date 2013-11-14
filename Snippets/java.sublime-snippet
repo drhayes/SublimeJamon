@@ -1,0 +1,7 @@
+<snippet>
+  <content><![CDATA[<%java>
+  $0
+</%java>]]></content>
+  <tabTrigger>java</tabTrigger>
+  <scope>text.html.jamon</scope>
+</snippet>

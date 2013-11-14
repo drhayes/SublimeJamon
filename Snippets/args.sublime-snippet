@@ -1,0 +1,7 @@
+<snippet>
+  <content><![CDATA[<%args>
+  $0
+</%args>]]></content>
+  <tabTrigger>args</tabTrigger>
+  <scope>text.html.jamon</scope>
+</snippet>

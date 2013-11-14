@@ -1,0 +1,251 @@
+{
+  "name": "Jamon",
+  "scopeName": "text.html.jamon",
+  "fileTypes": ["jamon"],
+  "patterns": [
+  {
+    "name": "meta.tag.any.jamon",
+    "begin": "(<%)([a-zA-Z0-9:]++)(?=[^>]*></\\2>)",
+    "beginCaptures": {
+      "1": {
+        "name": "punctuation.definition.tag.begin.jamon"
+      },
+      "2": {
+        "name": "entity.name.tag.jamon"
+      }
+    },
+    "end": "(>)(<)(/%)(\\2)(>)",
+    "endCaptures": {
+      "1": {
+        "name": "punctuation.definition.tag.end.jamon"
+      },
+      "2": {
+        "name": "punctuation.definition.tag.begin.jamon meta.scope.between-tag-pair.jamon"
+      },
+      "3": {
+        "name": "punctuation.definition.tag.begin.jamon"
+      },
+      "4": {
+        "name": "entity.name.tag.jamon"
+      },
+      "5": {
+        "name": "punctuation.definition.tag.end.jamon"
+      }
+    }
+  },
+  {
+    "name": "comment.block.jamon",
+    "begin": "<%doc>",
+    "beginCaptures": {
+      "0": {
+        "name": "punctuation.definition.comment.jamon"
+      }
+    },
+    "end": "</%doc>",
+    "endCaptures": {
+      "0": {
+        "name": "punctuation.definition.comment.jamon"
+      }
+    },
+    "patterns": [
+    {
+      "name": "comment.block.jamon",
+      "match": "^(</%)"
+    }
+    ]
+  },
+  {
+    "name": "storage.modifier.import.jamon",
+    "begin": "<%import>",
+    "beginCaptures": {
+      "0": {
+        "name": "punctuation.definition.import.jamon"
+      }
+    },
+    "end": "</%import>",
+    "endCaptures": {
+      "0": {
+        "name": "punctuation.definition.import.jamon"
+      }
+    }
+  },
+  {
+    "name": "variable.parameter.jamon",
+    "begin": "<%args>",
+    "beginCaptures": {
+      "0": {
+        "name": "punctuation.definition.args.jamon"
+      }
+    },
+    "end": "</%args>",
+    "endCaptures": {
+      "0": {
+        "name": "punctuation.definition.args.jamon"
+      }
+    }
+  },
+  {
+    "name": "variable.parameter.jamon",
+    "begin": "<%xargs>",
+    "beginCaptures": {
+      "0": {
+        "name": "punctuation.definition.xargs.jamon"
+      }
+    },
+    "end": "</%xargs>",
+    "endCaptures": {
+      "0": {
+        "name": "punctuation.definition.xargs.jamon"
+      }
+    }
+  },
+  {
+    "name": "storage.modifier.extends.jamon",
+    "begin": "<%extends",
+    "beginCaptures": {
+      "0": {
+        "name": "punctuation.definition.extends.jamon"
+      }
+    },
+    "end": ">",
+    "endCaptures": {
+      "0": {
+        "name": "punctuation.definition.extends.jamon"
+      }
+    }
+  },
+  {
+    "name": "meta.method.jamon",
+    "begin": "<%def ([a-zA-Z0-9]+)>",
+    "beginCaptures": {
+      "0": {
+        "name": "punctuation.definition.def.jamon"
+      },
+      "1": {
+        "name": "entity.name.function.jamon"
+      }
+    },
+    "end": "</%def>",
+    "endCaptures": {
+      "0": {
+        "name": "punctuation.definition.def.jamon"
+      }
+    },
+    "patterns": [
+    {
+      "include": "$self"
+    },
+    {
+      "include": "text.html.basic"
+    }
+    ]
+  },
+  {
+    "name": "keyword.control.jamon",
+    "begin": "<%if(.+)%>",
+    "beginCaptures": {
+      "0": {
+        "name": "punctuation.definition.if.jamon"
+      },
+      "1": {
+        "name": "entity.name.function.jamon"
+      }
+    },
+    "end": "(</%if>)|(<%else>)",
+    "endCaptures": {
+      "1": {
+        "name": "punctuation.definition.if.jamon"
+      },
+      "2": {
+        "name": "punctuation.definition.else.jamon"
+      }
+    },
+    "patterns": [
+    {
+      "include": "text.html.basic"
+    }
+    ]
+  },
+  {
+    "name": "keyword.control.else.jamon",
+    "begin": "<%else>",
+    "beginCaptures": {
+      "0": {
+        "name": "punctuation.definition.else.jamon"
+      }
+    },
+    "end": "</%if>",
+    "endCaptures": {
+      "0": {
+        "name": "punctuation.definition.if.jamon"
+      }
+    },
+    "patterns": [
+    {
+      "include": "text.html.basic"
+    }
+    ]
+  },
+  {
+    "name": "keyword.control.jamon",
+    "begin": "<%for (.+)%>",
+    "beginCaptures": {
+      "0": {
+        "name": "punctuation.definition.for.jamon"
+      },
+      "1": {
+        "name": "entity.name.function.jamon"
+      }
+    },
+    "end": "</%for>",
+    "endCaptures": {
+      "0": {
+        "name": "punctuation.definition.for.jamon"
+      }
+    },
+    "patterns": [
+    {
+      "include": "text.html.basic"
+    }
+    ]
+  },
+  {
+    "name": "punctuation.definition.abstract.jamon",
+    "match": "<%abstract>"
+  },
+  {
+    "name": "punctuation.definition.java.jamon",
+    "begin": "<%java>",
+    "beginCaptures": {
+      "0": {
+        "name": "punctuation.definition.java.jamon"
+      }
+    },
+    "end": "</%java>",
+    "endCaptures": {
+      "0": {
+        "name": "punctuation.definition.java.jamon"
+      }
+    },
+    "patterns": [
+    {
+      "include": "source.java"
+    }
+    ]
+  },
+  {
+    "name": "meta.method.jamon",
+    "begin": "<% ^(%>)+",
+    "end": "%>"
+  },
+  {
+    "name": "meta.template.jamon",
+    "begin": "<& ^(&>)+",
+    "end": "&>"
+  },
+  {
+    "include": "text.html.basic"
+  }
+  ],
+  "uuid": "fadaa18d-154c-45fb-98e3-64c3f4e4cbeb"
+}

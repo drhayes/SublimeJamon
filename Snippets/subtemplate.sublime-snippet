@@ -1,0 +1,5 @@
+<snippet>
+  <content><![CDATA[<& ${1:subtemplateName}; $0&>]]></content>
+  <tabTrigger>st</tabTrigger>
+  <scope>text.html.jamon</scope>
+</snippet>
